@@ -4,12 +4,13 @@ from selenium import webdriver
 from locators import LoginPageLocators
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
+from config import URLS
 
 
 @pytest.fixture
 def browser():
     driver = webdriver.Chrome()
-    driver.get("https://stellarburgers.nomoreparties.site/")
+    driver.get(URLS["main"])
     yield driver
     driver.quit()
 
@@ -23,7 +24,7 @@ def random_user():
 
 @pytest.fixture
 def authorized_user(browser):
-    browser.get("https://stellarburgers.nomoreparties.site/login")
+    browser.get(URLS["login"])
     WebDriverWait(browser, 5).until(
         expected_conditions.visibility_of_element_located(LoginPageLocators.SUBMIT_BUTTON))
     browser.find_element(*LoginPageLocators.EMAIL_INPUT).send_keys('numbertwo@yandex.ru')

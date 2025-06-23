@@ -29,6 +29,15 @@ class ForgotPageLocators:
     LOGIN_PAGE_BUTTON = ("xpath", ".//a[text() = 'Войти']")  #Кнопка Войти
 
 class ConstructorLocators:
-    BREAD_SECTION = ("xpath", ".//h2[text() = 'Булки']") #Секция Булки
-    SAUCE_SECTION = ("xpath", ".//h2[text() = 'Соусы']") #Секция Соусы
-    FILLING_SECTION = ("xpath", ".//h2[text() = 'Начинки']") #Секция Начинки
+    BREAD_SECTION_SELECTED = ("xpath",
+                              ".//div[@class = 'tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']//span[text() = 'Булки']") #Активная секция Булки
+    BREAD_SECTION_UNSELECTED = ("xpath",
+                                ".//div[@class = 'tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect']//span[text() = 'Булки']") #Неактивная секция Булки
+    SAUCE_SECTION_SELECTED = ("xpath",
+                              ".//div[@class = 'tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']//span[text() = 'Соусы']") #Активная секция Соусы
+    SAUCE_SECTION_UNSELECTED = ("xpath",
+                                ".//div[@class = 'tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect']//span[text() = 'Соусы']") #Неактивная секция Соусы
+    FILLING_SECTION_SELECTED = ("xpath",
+                              ".//div[@class = 'tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect']//span[text() = 'Начинки']") #Активная секция Начинки
+    FILLING_SECTION_UNSELECTED = ("xpath",
+                                ".//div[@class = 'tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect']//span[text() = 'Начинки']") #Неактивная секция Начинки
